@@ -4,6 +4,8 @@
     "license": "MIT",
     "keywords": ["markdown", "documentation", "examples"],
 
+    "bin": ["bin/exo"],
+
     "require": {
         "horse/horse": "~1"
     },
