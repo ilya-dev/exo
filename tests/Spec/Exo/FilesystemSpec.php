@@ -19,6 +19,11 @@ class FilesystemSpec extends ObjectBehavior {
         $this->shouldThrow('RuntimeException')->duringRead('gibberish');
     }
 
+    function it_appends_to_a_file()
+    {
+        $this->append('foo', 'bar');
+    }
+
 }
 
 namespace Exo;
@@ -31,5 +36,10 @@ function file_get_contents($file)
 function is_readable($file)
 {
     return 'foo' == $file;
+}
+
+function file_put_contents($file, $content)
+{
+    // empty for now
 }
 
