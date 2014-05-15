@@ -23,5 +23,17 @@ class Filesystem {
         return file_get_contents($file);
     }
 
+    /**
+     * Append to a file.
+     *
+     * @param string $file
+     * @param string $content
+     * @return integer
+     */
+    public function append($file, $content)
+    {
+        return file_put_contents($file, $content, FILE_APPEND);
+    }
+
 }
 
