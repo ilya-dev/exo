@@ -9,5 +9,17 @@ class FilesystemSpec extends ObjectBehavior {
         $this->shouldHaveType('Exo\Filesystem');
     }
 
+    function it_reads_a_file()
+    {
+        $this->read('foo')->shouldReturn('foo');
+    }
+
+}
+
+namespace Exo;
+
+function file_get_contents($file)
+{
+    return $file;
 }
 
