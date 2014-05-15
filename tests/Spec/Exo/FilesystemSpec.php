@@ -14,6 +14,11 @@ class FilesystemSpec extends ObjectBehavior {
         $this->read('foo')->shouldReturn('foo');
     }
 
+    function it_throws_an_exception_if_reading_failed()
+    {
+        $this->shouldThrow('RuntimeException')->duringRead('gibberish');
+    }
+
 }
 
 namespace Exo;
@@ -21,5 +26,10 @@ namespace Exo;
 function file_get_contents($file)
 {
     return $file;
+}
+
+function is_readable($file)
+{
+    return 'foo' == $file;
 }
 
