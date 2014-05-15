@@ -3,8 +3,101 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "75c10c595c1ee6b06c66f8f1eb89ba82",
+    "hash": "9512a4097081f4e0c3cd846953941c1e",
     "packages": [
+        {
+            "name": "horse/horse",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/horse-php/horse.git",
+                "reference": "e2b72508dde353de6cacfbed852aa3de3fc06eff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/horse-php/horse/zipball/e2b72508dde353de6cacfbed852aa3de3fc06eff",
+                "reference": "e2b72508dde353de6cacfbed852aa3de3fc06eff",
+                "shasum": ""
+            },
+            "require": {
+                "ilya/block": "~1",
+                "symfony/console": "2.4.*"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "2.0.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Horse\\": "src/Horse"
+                },
+                "classmap": [
+                    "tests/DummyCommand.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Powerful symfony/console wrapper",
+            "keywords": [
+                "console",
+                "symfony",
+                "wrapper"
+            ],
+            "time": "2014-05-02 08:24:56"
+        },
+        {
+            "name": "ilya/block",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ilya-dev/block.git",
+                "reference": "52146cd99aa8d54f112cb30058e233e4ebbeb046"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ilya-dev/block/zipball/52146cd99aa8d54f112cb30058e233e4ebbeb046",
+                "reference": "52146cd99aa8d54f112cb30058e233e4ebbeb046",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "~2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Block\\": "src/Block/"
+                },
+                "files": [
+                    "tests/Dummy.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ilya S",
+                    "email": "public.ilya.s@gmail.com"
+                }
+            ],
+            "description": "Parsing docblocks made easy",
+            "keywords": [
+                "blocks",
+                "docblocks",
+                "docs",
+                "documentation",
+                "parsing",
+                "php",
+                "reflection"
+            ],
+            "time": "2014-05-01 07:33:40"
+        },
         {
             "name": "symfony/console",
             "version": "v2.4.4",

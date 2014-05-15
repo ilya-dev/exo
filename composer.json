@@ -5,7 +5,7 @@
     "keywords": ["markdown", "documentation", "examples"],
 
     "require": {
-        "symfony/console": "2.4.*"
+        "horse/horse": "~1"
     },
     "require-dev": {
         "phpspec/phpspec": "2.0.*"
