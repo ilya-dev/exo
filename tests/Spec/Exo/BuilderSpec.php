@@ -9,5 +9,9 @@ class BuilderSpec extends ObjectBehavior {
         $this->shouldHaveType('Exo\Builder');
     }
 
-}
+    function it_builds_a_Markdown_document()
+    {
+        // TODO: write a test
+    }
 
+}
