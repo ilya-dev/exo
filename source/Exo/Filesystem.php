@@ -33,12 +33,12 @@ class Filesystem {
      */
     public function append($file, $content)
     {
-        $bytes = file_put_contents($file, $content, FILE_APPEND);
+        $written = file_put_contents($file, $content, FILE_APPEND);
 
         // If $content is not empty
         // but nothing was written to $file
         // throw an exception.
-        if ($content and ! $bytes)
+        if ($content and ! $written)
         {
             throw new RuntimeException(
                 "Unable to write to {$file}."
