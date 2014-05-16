@@ -12,6 +12,8 @@ class ParserSpec extends ObjectBehavior {
     function it_extracts_examples_from_a_string()
     {
         $this->extractExamples("foo\nbar")->shouldReturn(["foo\nbar"]);
+
+        $this->extractExamples("foo\nbar\n\nbaz")->shouldReturn(["foo\nbar", "baz"]);
     }
 
 }

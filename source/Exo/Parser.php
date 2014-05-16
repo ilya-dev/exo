@@ -10,7 +10,7 @@ class Parser {
      */
     public function extractExamples($content)
     {
-        return [$content];
+        return explode("\n\n", $content);
     }
 
 }
