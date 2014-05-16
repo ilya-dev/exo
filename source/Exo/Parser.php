@@ -34,7 +34,7 @@ class Parser {
      */
     public function splitIntoLines($example)
     {
-
+        return explode("\n", $example);
     }
 
 }
