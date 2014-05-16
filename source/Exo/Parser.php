@@ -10,6 +10,8 @@ class Parser {
      */
     public function extractExamples($content)
     {
+        $content = preg_replace('/^<\?(php)?/', '', $content);
+
         // So that you can separate examples
         // by an empty line.
         $examples = explode("\n\n", $content);

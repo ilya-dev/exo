@@ -13,9 +13,9 @@ class ParserSpec extends ObjectBehavior {
     {
         $this->extractExamples("foo\nbar")->shouldReturn(["foo\nbar"]);
 
-        $this->extractExamples("<?php\nfoo\nbar")->shouldReturn(["foo\nbar"]);
+        $this->extractExamples("<?php\nfoo\nbar")->shouldReturn(["\nfoo\nbar"]);
 
-        $this->exampleExamples("<?\n\n\nfoo\nbar")->shouldReturn(["foo\nbar"]);
+        $this->extractExamples("<?\n\n\nfoo\nbar")->shouldReturn(["\nfoo\nbar"]);
 
         $this->extractExamples("foo\nbar\n\nbaz")->shouldReturn(["foo\nbar", "baz"]);
 
