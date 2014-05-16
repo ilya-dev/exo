@@ -18,4 +18,9 @@ class ParserSpec extends ObjectBehavior {
         $this->extractExamples("foo\n\n\n\nbar")->shouldReturn(["foo", "bar"]);
     }
 
+    function it_splits_an_example_into_lines()
+    {
+        $this->splitIntoLines("foo\nbar\nbaz")->shouldReturn(["foo", "bar", "baz"]);
+    }
+
 }

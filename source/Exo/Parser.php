@@ -26,4 +26,15 @@ class Parser {
         return array_values($examples);
     }
 
+    /**
+     * Split an example into lines.
+     *
+     * @param string $example
+     * @return array
+     */
+    public function splitIntoLines($example)
+    {
+
+    }
+
 }
