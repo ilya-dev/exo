@@ -3,12 +3,12 @@
 class Builder {
 
     /**
-     * Build a Markdown document from given $examples.
+     * Build a Markdown document from given $content.
      *
-     * @param array $examples
+     * @param string $content
      * @return string
      */
-    public function build(array $examples)
+    public function build($content)
     {
         // I will write code for this method a bit later...
     }
