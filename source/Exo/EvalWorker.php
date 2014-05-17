@@ -25,10 +25,14 @@ class EvalWorker {
 
             $callback = function(array $matches)
             {
-                var_dump($matches);exit;
+                $content = end($matches);
+
+                $content = str_replace(PHP_EOL, '', $content) ? $content : '';
+
+                return "[{$content}]";
             };
 
-            return preg_replace_callback('/array (.*)/', $callback, $result);
+            return preg_replace_callback('/array \((.*)\)/s', $callback, $result);
         }
 
         return var_export($result, true);
