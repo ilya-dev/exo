@@ -19,6 +19,18 @@ class EvalWorker {
             );
         }
 
+        if (is_array($result))
+        {
+            $result = var_export($result, true);
+
+            $callback = function(array $matches)
+            {
+                var_dump($matches);exit;
+            };
+
+            return preg_replace_callback('/array (.*)/', $callback, $result);
+        }
+
         return var_export($result, true);
     }
 
