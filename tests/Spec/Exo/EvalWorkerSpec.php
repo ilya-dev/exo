@@ -14,6 +14,8 @@ class EvalWorkerSpec extends ObjectBehavior {
         $this->evaluate('$foo = null')->shouldReturn('NULL');
         $this->evaluate('15 + 2')->shouldReturn('17');
         $this->evaluate('pow(12, 2)')->shouldReturn('144');
+
+        $this->evaluate('new stdClass')->shouldMatch('/[object:stdClass:(\w+)]/');
     }
 
 }
