@@ -10,16 +10,25 @@ class EvalWorker {
      */
     public function evaluate($code)
     {
-        $result = eval ("return {$code};");
+        return $this->toString(eval ("return {$code};"));
+    }
 
-        if (is_object($result))
+    /**
+     * Convert given $value to a string.
+     *
+     * @param mixed $value
+     * @return string
+     */
+    protected function toString($value)
+    {
+        if (is_object($value))
         {
             return sprintf(
-                "[object:%s:%s]", get_class($result), spl_object_hash($result)
+                "[object:%s:%s]", get_class($value), spl_object_hash($value)
             );
         }
 
-        return var_export($result, true);
+        return var_export($value, true);
     }
 
 }
