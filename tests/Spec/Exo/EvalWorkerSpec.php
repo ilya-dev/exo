@@ -20,6 +20,9 @@ class EvalWorkerSpec extends ObjectBehavior {
         $this->evaluate('[]')->shouldReturn('[]');
         $this->evaluate('[1, 2, "foo" => 3]')
              ->shouldReturn("[\n  0 => 1,\n  1 => 2,\n  'foo' => 3,\n]");
+
+        $this->evaluate('[1  => [1]]')
+             ->shouldReturn("[\n  0 => [\n    0 => 1,\n],\n]");
     }
 
 }
