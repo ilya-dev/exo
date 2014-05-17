@@ -17,12 +17,8 @@ class EvalWorkerSpec extends ObjectBehavior {
 
         $this->evaluate('new stdClass')->shouldMatch('/[object:stdClass:(\w+)]/');
 
-        $this->evaluate('[]')->shouldReturn('[]');
-        $this->evaluate('[1, 2, "foo" => 3]')
-             ->shouldReturn("[\n  0 => 1,\n  1 => 2,\n  'foo' => 3,\n]");
-
-        $this->evaluate('[1  => [1]]')
-             ->shouldReturn("[\n  0 => [\n    0 => 1,\n],\n]");
+        $this->evaluate('["foo" => 42]')
+             ->shouldReturn("array (\n  'foo' => 42,\n)");
     }
 
 }

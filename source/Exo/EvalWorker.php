@@ -19,22 +19,6 @@ class EvalWorker {
             );
         }
 
-        if (is_array($result))
-        {
-            $result = var_export($result, true);
-
-            $callback = function(array $matches)
-            {
-                $content = end($matches);
-
-                $content = str_replace(PHP_EOL, '', $content) ? $content : '';
-
-                return "[{$content}]";
-            };
-
-            return preg_replace_callback('/array \((.*)\)/s', $callback, $result);
-        }
-
         return var_export($result, true);
     }
 
