@@ -10,7 +10,9 @@ class EvalWorker {
      */
     public function evaluate($code)
     {
+        $result = eval ("return {$code};");
 
+        return var_export($result, true);
     }
 
 }
