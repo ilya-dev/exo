@@ -21,14 +21,26 @@ class EvalWorker {
      */
     protected function toString($value)
     {
-        if (is_object($value))
+        switch (gettype($value))
         {
-            return sprintf(
-                "[object:%s:%s]", get_class($value), spl_object_hash($value)
-            );
+            case 'object':
+                return $this->objectToString($value);
+            default:
+                return var_export($value, true);
         }
+    }
 
-        return var_export($value, true);
+    /**
+     * Convert given $object to a string.
+     *
+     * @param mixed $object
+     * @return string
+     */
+    protected function objectToString($object)
+    {
+        return sprintf(
+            "[object:%s:%s]", get_class($object), spl_object_hash($object)
+        );
     }
 
 }
