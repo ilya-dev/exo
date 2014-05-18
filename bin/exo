@@ -3,7 +3,14 @@
 
 putenv('WORK_DIR='.getcwd());
 
-require __DIR__.'/../vendor/autoload.php';
+if (file_exists($loader = __DIR__.'/../vendor/autoload.php'))
+{
+    require $loader;
+}
+else
+{
+    require __DIR__.'/../../../autoload.php';
+}
 
 $app = new Horse\Application('Exo');
 
