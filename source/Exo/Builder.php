@@ -46,7 +46,7 @@ class Builder {
                 "## Example #".($i + 1)."\n\n".$this->buildBlock($examples[$i]);
         }
 
-        return "# Examples\n\n".implode("\n\n", $examples);
+        return "# Examples\n\n".implode("\n", $examples);
     }
 
     /**
@@ -60,7 +60,7 @@ class Builder {
         $lines = $this->parser->splitIntoLines($code);
         $result = [];
 
-        foreach ($lines as $line)
+        foreach (array_filter($lines) as $line)
         {
             $result[] = $this->printer->toString(
                 eval ("return {$line};")
@@ -68,7 +68,7 @@ class Builder {
         }
 
         return sprintf(
-            "```php\n%s```\n```\n%s\n```",
+            "```php\n%s```\n```\n%s\n```\n",
             implode("\n", $lines),
             implode("\n", $result)
         );

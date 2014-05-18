@@ -12,7 +12,7 @@ class BuilderSpec extends ObjectBehavior {
     function it_builds_an_example_block()
     {
         $this->buildBlock($code = "\$bar = 42;\n\$bar;\n")
-             ->shouldReturn("```php\n{$code}```\n```\n42\n42\n```");
+             ->shouldReturn("```php\n{$code}```\n```\n42\n42\n```\n");
     }
 
     function it_builds_a_Markdown_document()
