@@ -24,16 +24,16 @@ class Filesystem {
     }
 
     /**
-     * Append to a file.
+     * Overwrite a file.
      *
      * @throws RuntimeException
      * @param string $file
      * @param string $content
      * @return void
      */
-    public function append($file, $content)
+    public function overwrite($file, $content)
     {
-        $written = file_put_contents($file, $content, FILE_APPEND);
+        $written = file_put_contents($file, $content);
 
         // If $content is not empty
         // but nothing was written to $file

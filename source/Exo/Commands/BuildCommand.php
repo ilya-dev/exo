@@ -70,7 +70,7 @@ class BuildCommand extends Command {
 
         $document = $this->builder->build($content);
 
-        return $this->filesystem->overwrite($document);
+        return $this->filesystem->overwrite($workDir.$out, $document);
     }
 
 }
