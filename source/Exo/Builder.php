@@ -10,24 +10,24 @@ class Builder {
     protected $parser;
 
     /**
-     * The Evaluator instance.
+     * The Printer instance.
      *
-     * @var Evaluator
+     * @var Printer
      */
-    protected $evaluator;
+    protected $printer;
 
     /**
      * The constructor.
      *
      * @param Parser|null $parser
-     * @param Evaluator|null $evaluator
+     * @param Printer|null $printer
      * @return Builder
      */
-    public function __construct(Parser $parser = null, Evaluator $evaluator = null)
+    public function __construct(Parser $parser = null, Printer $printer = null)
     {
         $this->parser = $parser ?: new Parser;
 
-        $this->evaluator = $evaluator ?: new Evaluator;
+        $this->printer = $printer ?: new Printer;
     }
 
     /**
@@ -49,7 +49,19 @@ class Builder {
      */
     public function buildBlock($code)
     {
+        $lines = $this->parser->splitIntoLines($code);
+        $result = [];
 
+        foreach ($lines as $line)
+        {
+            $result[] = eval ($line);
+        }
+
+        return sprintf(
+            "```php\n%s\n```\n```\n%s\n```",
+            implode("\n", $lines),
+            implode("\n", $result)
+        );
     }
 
 }

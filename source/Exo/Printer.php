@@ -1,17 +1,6 @@
 <?php namespace Exo;
 
-class Evaluator {
-
-    /**
-     * Evaluate given $code.
-     *
-     * @param string $code
-     * @return mixed
-     */
-    public function evaluate($code)
-    {
-        return $this->toString(eval ("return {$code};"));
-    }
+class Printer {
 
     /**
      * Convert given $value to a string.
@@ -19,7 +8,7 @@ class Evaluator {
      * @param mixed $value
      * @return string
      */
-    protected function toString($value)
+    public function toString($value)
     {
         switch (gettype($value))
         {
