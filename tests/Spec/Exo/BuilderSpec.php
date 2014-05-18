@@ -17,7 +17,13 @@ class BuilderSpec extends ObjectBehavior {
 
     function it_builds_a_Markdown_document()
     {
-        // TODO: write a test
+        $testDir = __DIR__.'/../../';
+
+        $in = file_get_contents($testDir.'examples.php');
+
+        $out = file_get_contents($testDir.'examples.md');
+
+        $this->build($in)->shouldReturn($out);
     }
 
 }
