@@ -19,14 +19,14 @@ class FilesystemSpec extends ObjectBehavior {
         $this->shouldThrow('RuntimeException')->duringRead('gibberish');
     }
 
-    function it_appends_to_a_file()
+    function it_overwrites_a_file()
     {
-        $this->append('foo', 'bar');
+        $this->overwrite('foo', 'bar');
     }
 
-    function it_throws_an_exception_if_appending_failed()
+    function it_throws_an_exception_if_overwriting_failed()
     {
-        $this->shouldThrow('RuntimeException')->duringAppend('bar', 'gibberish');
+        $this->shouldThrow('RuntimeException')->duringOverwrite('bar', 'gibberish');
     }
 
 }
