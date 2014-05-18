@@ -64,7 +64,13 @@ class BuildCommand extends Command {
      */
     protected function build($in, $out)
     {
+        $workDir = getenv('WORK_DIR').'/';
 
+        $content = $this->filesystem->read($workDir.$in);
+
+        $document = $this->builder->build($content);
+
+        return $this->filesystem->overwrite($document);
     }
 
 }

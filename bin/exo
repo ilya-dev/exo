@@ -1,6 +1,8 @@
 #!/usr/bin/env php
 <?php
 
+putenv('WORK_DIR='.getcwd());
+
 require __DIR__.'/../vendor/autoload.php';
 
 $app = new Horse\Application('Exo');
