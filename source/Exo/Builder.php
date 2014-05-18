@@ -68,7 +68,7 @@ class Builder {
         }
 
         return sprintf(
-            "```php\n%s\n```\n```\n%s\n```",
+            "```php\n%s```\n```\n%s\n```",
             implode("\n", $lines),
             implode("\n", $result)
         );
