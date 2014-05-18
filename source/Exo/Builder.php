@@ -54,7 +54,9 @@ class Builder {
 
         foreach ($lines as $line)
         {
-            $result[] = eval ($line);
+            $result[] = $this->printer->toString(
+                eval ("return {$line};")
+            );
         }
 
         return sprintf(
