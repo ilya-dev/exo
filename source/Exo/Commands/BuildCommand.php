@@ -50,9 +50,9 @@ class BuildCommand extends Command {
 
         $output("Building $out from $in...");
 
-        $built = $this->build($in, $out);
+        $this->build($in, $out);
 
-        $output($built ? "<info>Finished</info>" : "<error>Failed</error>");
+        $output("<info>Finished</info>");
     }
 
     /**
@@ -60,7 +60,7 @@ class BuildCommand extends Command {
      *
      * @param string $in
      * @param string $out
-     * @return boolean
+     * @return void
      */
     protected function build($in, $out)
     {
@@ -70,7 +70,7 @@ class BuildCommand extends Command {
 
         $document = $this->builder->build($content);
 
-        return $this->filesystem->overwrite($workDir.$out, $document);
+        $this->filesystem->overwrite($workDir.$out, $document);
     }
 
 }
