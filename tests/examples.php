@@ -1,6 +1,5 @@
 <?php
 
-$foo = new stdClass;
-$foo->bar = 'baz' + 42;
-$someFlag = ($foo->bar == 42);
-
+$foo = [1];
+$foo = 'baz' + 42;
+$someFlag = ($foo == 42);

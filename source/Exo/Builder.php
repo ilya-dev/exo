@@ -38,7 +38,15 @@ class Builder {
      */
     public function build($content)
     {
-        // I will write code for this method a bit later...
+        $examples = $this->parser->extractExamples($content);
+
+        for ($i = 0; $i < count($examples); $i++)
+        {
+            $examples[$i] =
+                "## Example #".($i + 1)."\n\n".$this->buildBlock($examples[$i]);
+        }
+
+        return "# Examples\n\n".implode("\n\n", $examples);
     }
 
     /**
