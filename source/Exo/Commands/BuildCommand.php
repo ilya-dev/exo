@@ -49,6 +49,22 @@ class BuildCommand extends Command {
         $out = $input('out') ?: 'examples.md';
 
         $output("Building $out from $in...");
+
+        $built = $this->build($in, $out);
+
+        $output($built ? "<info>Finished</info>" : "<error>Failed</error>");
+    }
+
+    /**
+     * Build a Markdown document.
+     *
+     * @param string $in
+     * @param string $out
+     * @return boolean
+     */
+    protected function build($in, $out)
+    {
+
     }
 
 }
